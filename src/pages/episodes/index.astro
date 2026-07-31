@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EpisodeCard from '../../components/EpisodeCard.astro';
+import { episodes } from '../../data/episodes';
+---
+<BaseLayout title="Episodes" description="Listen to recent episodes of Never Surrender by The Squinters, the original GWS Giants podcast by Giants fans.">
+  <header class="page-hero">
+    <p class="eyebrow">The archive</p>
+    <h1>Every episode.<br><span>Every overreaction.</span></h1>
+    <p class="intro">Match reviews, previews, songs, speculation and the occasional fleeting brush with accuracy.</p>
+  </header>
+  <section class="section-space" aria-labelledby="episodes-title">
+    <div class="section-heading">
+      <div><p class="section-kicker">Season 2026</p><h2 id="episodes-title">Recent episodes</h2></div>
+      <p>Starting with the current season. The full back catalogue will be restored progressively.</p>
+    </div>
+    <div class="episode-list">{episodes.map((episode, index) => <EpisodeCard episode={episode} featured={index === 0} />)}</div>
+  </section>
+</BaseLayout>

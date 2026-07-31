@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HostCard from '../components/HostCard.astro';
+import RatingStrip from '../components/RatingStrip.astro';
+import { hosts, formerHosts } from '../data/hosts';
+---
+<BaseLayout title="About The Squinters" description="Meet The Squinters and read the proudly unofficial history of the original GWS Giants podcast by Giants fans.">
+  <header class="page-hero">
+    <p class="eyebrow">The completely reliable history</p>
+    <h1>Built by Giants fans.<br><span>Fuelled by unnecessary emotion.</span></h1>
+    <p class="intro">Never Surrender by The Squinters is a sanctuary for those riding the Orange Tsunami—and a place to commiserate when it runs directly into a retaining wall.</p>
+  </header>
+
+  <section class="about panel section-space">
+    <p class="section-kicker">What this is</p>
+    <h2>The <s>only</s> <em>original</em> GWS Giants podcast.</h2>
+    <p>Every week, after every Giants match, The Squinters biasedly review the game, preview the next game biasedly, speculate biasedly on the giant issues of the week and impartially on anything else that biasedly occurs to them.</p>
+    <p>The show is proudly fan-made, proudly unofficial and designed for supporters who want more than a neutral match report. We care too much, celebrate loudly, suffer unnecessarily and keep turning up.</p>
+  </section>
+
+  <section class="section-space" aria-labelledby="history-title">
+    <div class="section-heading"><div><p class="section-kicker">How it happened</p><h2 id="history-title">From Sydney Uni to the Beanstalk.</h2></div><p>A podcast history featuring footy mates, Viking essays, GarageBand and a dangerous amount of optimism.</p></div>
+    <div class="timeline">
+      <article class="timeline-item panel"><span>2019</span><div><h3>Needles starts the pod</h3><p>A group of Sydney Uni AFL mates had all jumped aboard the Giants. Needles turned the group chat into a podcast and Sparrow—an old college mate, former rugby man and newly converted AFL tragic who had helped build Giants Stadium—was all in.</p></div></article>
+      <article class="timeline-item panel"><span>2023</span><div><h3>A Viking arrives</h3><p>After producing a sustained body of written work about the future of Adam Tomlinson, Ragnar Lothbrok successfully joined the team. His energy was pivotal at a point when editing and upkeep were threatening to flatten Needles and Sparrow.</p></div></article>
+      <article class="timeline-item panel"><span>2024</span><div><h3>The revival gathers pace</h3><p>Ragnar learnt GarageBand, returned to writing music and brought the rare combination of having played the game and actually watching every match. The pod became more consistent, louder and significantly more musical.</p></div></article>
+      <article class="timeline-item panel"><span>2025–26</span><div><h3>Enter Orca</h3><p>Orca—the born-again evangelical AFL nuffie—committed to weekly pods and often brought Orca Number 3 for insight from a teenager’s perspective. The current four-host shape was complete.</p></div></article>
+      <article class="timeline-item panel"><span>July 2026</span><div><h3>The website never surrenders</h3><p>After the old WordPress site disappeared under the weight of cost and upkeep, Sparrow rediscovered his love of coding and content. The Squinters returned to the web with a proper home for episodes, history, articles and future orange nonsense.</p></div></article>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="hosts-title">
+    <div class="section-heading"><div><p class="section-kicker">The current crew</p><h2 id="hosts-title">Meet the Squinters.</h2></div><p>Four distinct personalities, loosely connected by one football club and a refusal to surrender.</p></div>
+    <div class="host-grid">{hosts.map(host => <HostCard host={host} />)}</div>
+  </section>
+
+  <section class="segments panel section-space" aria-labelledby="segments-title">
+    <div><p class="section-kicker">Recurring nonsense</p><h2 id="segments-title">The segments.</h2></div>
+    <div class="segments-grid">
+      <p><strong>Rag’s Bake</strong><br>For players, teams, media figures and performances that have earned the heat.</p>
+      <p><strong>Ragnar’s Maths</strong><br>Stats, streaks and numerical nonsense that somehow proves the point.</p>
+      <p><strong>Stoic Advice from Sparrow</strong><br>Emotional ballast for injuries, umpiring, collapses and September.</p>
+      <p><strong>Hairloss with Orca</strong><br>A weekly opportunity to pull someone back down to size.</p>
+      <p><strong>Song of the Week</strong><br>The musical state of the Giants, selected by Orca.</p>
+      <p><strong>Parody Songs</strong><br>Written by Ragnar or performed by Jimmy and the Boys.</p>
+      <p><strong>Quiz with Needles</strong><br>Knowledge, memory and public humiliation.</p>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="wall-title">
+    <div class="section-heading"><div><p class="section-kicker">Wall of glory</p><h2 id="wall-title">Former Squinters.</h2></div><p>The microphones change. The archive remembers.</p></div>
+    <div class="chip-wall">{formerHosts.map(name => <span>{name}</span>)}</div>
+  </section>
+
+  <section class="section-space"><RatingStrip /></section>
+</BaseLayout>

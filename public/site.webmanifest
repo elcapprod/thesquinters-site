@@ -1,0 +1,11 @@
+{
+  "name": "Never Surrender by The Squinters",
+  "short_name": "The Squinters",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#202124",
+  "theme_color": "#f47a00",
+  "icons": [
+    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

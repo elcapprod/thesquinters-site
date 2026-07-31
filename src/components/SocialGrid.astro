@@ -1,0 +1,14 @@
+---
+import { socials } from '../data/site';
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+---
+<div class:list={["link-grid", compact && "link-grid-compact"]}>
+  {socials.map(item => (
+    <a class:list={["link-card", item.featured && "featured"]} href={item.url} target={item.internal ? undefined : '_blank'} rel={item.internal ? undefined : 'noopener noreferrer'}>
+      <img src={item.icon} alt="" aria-hidden="true" width="64" height="64">
+      <span><strong>{item.name}</strong><small>{item.handle}</small></span>
+      <b aria-hidden="true">{item.internal ? '→' : '↗'}</b>
+    </a>
+  ))}
+</div>

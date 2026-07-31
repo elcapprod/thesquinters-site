@@ -1,0 +1,14 @@
+---
+import type { Host } from '../data/hosts';
+interface Props { host: Host; }
+const { host } = Astro.props;
+---
+<article class="host-card panel">
+  <img src={host.image} alt={`${host.name}, host of Never Surrender by The Squinters`} width="1200" height="1200" loading="lazy">
+  <div class="host-card-copy">
+    <p class="section-kicker">{host.role}</p>
+    <h3>{host.name}</h3>
+    <p>{host.bio}</p>
+    <div class="chip-row">{host.segments.map(segment => <span>{segment}</span>)}</div>
+  </div>
+</article>
