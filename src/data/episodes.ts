@@ -13,6 +13,87 @@ export type Episode = {
 };
 
 export const episodes: Episode[] = [
+{
+    "episodeNumber": 138,
+    "year": 2026,
+    "round": 23,
+    "title": "NO. 138 - 2026 R23: EAGLES LOSING STREAK KEPT IN TACT!!! Now Let's Ruin Tex's Farewell Party",
+    "slug": "138-2026-r23-eagles-losing-streak-kept-in-tact-now-lets-ruin-texs-farewell-party",
+    "summary": "The Giants keep West Coast's losing streak intact with a 54-point win, the AFLW side opens with a win, and attention turns to spoiling Tex Walker's farewell at Adelaide Oval.",
+    "body": [
+        "A 9 game losing streak by the Eagles has been upheld by the Giants!!! That's a big win.",
+        "And we have the chance to spoil the party for big Tex Walker. This is our GF.",
+        "When you can't make the Encouragement Award of 10th place in the AFL Finals, these milestones become monumental.",
+        "So we rejoice in our 54 point thumping over the Eagles, AND A WIN TO THE WOMENS SIDE!!! yeah the girls 🙌🏻 and we look forward to keeping our winning form at Adelaide Oval.",
+        "There's plenty to like about this end to a somewhat dissapointing season: the kids. Rattus, Harvey, Gru, Delana, Rowston, Fonti, Angove, Angwin.... Great signs for what's coming in the next Orange Crop.",
+        "Did we see the last at the Great Man, Toby Greene, at the Beanstalk? Felt like it. But Loyal Listener Dan remains optimistic, giving us hope...",
+        "Regardless, all eyes on Adelaide Oval — Let's ruffle some Crow Feathers and spoil the party.",
+        "Finish strong, embrace the Orange Tinted Linings, and...",
+        "NEVER SURRENDER!"
+    ],
+    "spotifyUrl": "https://open.spotify.com/episode/1Ayf8azUfKPOxWJbaeUIsU?si=967e0cc01d084654",
+    "appleUrl": "https://podcasts.apple.com/au/podcast/never-surrender-a-gws-giants-afl-podcast/id1467696542?i=1000784578303",
+    "published": "2026-08-20",
+    "publishedLabel": "20 August 2026"
+},
+{
+    "episodeNumber": 137,
+    "year": 2026,
+    "round": 22,
+    "title": "NO. 137 - 2026 R22: The Sun Sets on 2026... YOU'RE WELCOME, DIMMA! Surely West Coast Can't Beat Us Twice...",
+    "slug": "137-2026-r22-the-sun-sets-on-2026-youre-welcome-dimma-surely-west-coast-cant-beat-us-twice",
+    "summary": "The season looks cooked—unless Orca's Predicator has other ideas. The Squinters find Orange Tinted Linings, start the 2027 Manifesto and look ahead to West Coast.",
+    "body": [
+        "Sparrow brought the pessimism:",
+        "\"That's it, we're cooked...\"",
+        "THEN ORCA RUNS HIS PREDICATOR AND WE'RE MEETING THE HAWKS IN A PRELIM!!!",
+        "That's what the Orange Crush is for — lifting us up through the dark moments of August pain.",
+        "But let's cut to the facts: we have developed a rather concerning habit of breaking incredible runs of losses and gifting a delightful W to struggling teams.",
+        "Which is lovely, but it has to stop.",
+        "That's the first item in our Season 2027 Manifesto.",
+        "The second? Work out how to keep troops on the paddock.",
+        "Two more soldiers down...",
+        "BRING IN KEEFFE!!! Heard he's still playing. Or maybe that coach in the Ressies that first debuted in the late 90s. Desperate times, desperate measures...",
+        "But seriously... how good's Delana?",
+        "What a breakout game.",
+        "Silver linings, folks.",
+        "Well... Orange Tinted Linings.",
+        "And this weekend — GO THE GIRLS!",
+        "Get around them for Game 1 of the AFLW season after we smash the Eagles.",
+        "NEVER SURRENDER!!"
+    ],
+    "spotifyUrl": "https://open.spotify.com/episode/7GON52InZ8T7xnq6rs2gQ2?si=cb5442508c92443b",
+    "appleUrl": "https://podcasts.apple.com/au/podcast/never-surrender-a-gws-giants-afl-podcast/id1467696542?i=1000783114093",
+    "published": "2026-08-13",
+    "publishedLabel": "13 August 2026"
+},
+{
+    "episodeNumber": 136,
+    "year": 2026,
+    "round": 21,
+    "title": "NO. 136 - 2026 R21: A Power Outage Sparks Hope in Adelaide... OUR SEASON IS STILL ALIVE!!! Well, Kind Of...",
+    "slug": "136-2026-r21-a-power-outage-sparks-hope-in-adelaide-our-season-is-still-alive-well-kind-of",
+    "summary": "A Power outage in Adelaide sparks a flicker of hope before Carlton dims it again. Sparrow and Orca talk finals dreams, Whitfield, Stringer, Hairloss, Song of the Week and the Suns.",
+    "body": [
+        "A flicker of hope from a Power outage in Adelaide... then WHACK! Carlton flogs the Lions and puts our season back in the dark on life support.",
+        "Could that ripple on the Parramatta River become a surging Orange Tsunami flooding deep into September? We can only dream.",
+        "And dream we will.",
+        "Dreams of Whitfield dialling back the clock and kicking them from 50 out on an angle.",
+        "Dreams of Stringer and his fish oil supplement dynasties.",
+        "Dreams of the greats who have donned the number 31 for the Giants. Jarrod Brander, we remember and salute you.",
+        "Get into this week's dose of The Squinters with Sparrow and Orca. Hair loss, Song of the Week, Squintfest options... it's all there.",
+        "And, of course, we look ahead to our clash at the Golden Egg against our Expansion Cup rivals, the Suns.",
+        "Oh, and if you make it to Canberra, check out the Mount Ainslie 500 on behalf of Sparrow, on the 500over10.com website: https://www.500over10.com/courses/au/canberra/mount-ainslie/",
+        "Report back with your time.",
+        "That's it. Enough cross-pollinating of podcast interests.",
+        "Giants for the win, gamble responsibly which is not at all, and...",
+        "NEVER SURRENDER"
+    ],
+    "spotifyUrl": "https://open.spotify.com/episode/7IRm8n9xB9YegyH7Z4aBWm?si=0e61ba891d1342e7",
+    "appleUrl": "https://podcasts.apple.com/au/podcast/never-surrender-a-gws-giants-afl-podcast/id1467696542?i=1000780057399",
+    "published": "2026-08-05",
+    "publishedLabel": "5 August 2026"
+},
   {
     "episodeNumber": 135,
     "year": 2026,
