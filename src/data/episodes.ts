@@ -26,7 +26,7 @@ export const episodes: Episode[] = [
         "When you can't make the Encouragement Award of 10th place in the AFL Finals, these milestones become monumental.",
         "So we rejoice in our 54 point thumping over the Eagles, AND A WIN TO THE WOMENS SIDE!!! yeah the girls 🙌🏻 and we look forward to keeping our winning form at Adelaide Oval.",
         "There's plenty to like about this end to a somewhat dissapointing season: the kids. Rattus, Harvey, Gru, Delana, Rowston, Fonti, Angove, Angwin.... Great signs for what's coming in the next Orange Crop.",
-        "Did we see the last at the Great Man, Toby Greene, at the Beanstalk? Felt like it. But Loyal Listener Dan remains optimistic, giving us hope...",
+        "Did we see the last of the Great Man, Toby Greene, at the Beanstalk? Felt like it. But Loyal Listener Dan remains optimistic, giving us hope...",
         "Regardless, all eyes on Adelaide Oval — Let's ruffle some Crow Feathers and spoil the party.",
         "Finish strong, embrace the Orange Tinted Linings, and...",
         "NEVER SURRENDER!"
