@@ -158,7 +158,12 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
 .section-space { margin-top: 88px; }
 .about { padding: clamp(28px, 5vw, 58px); }
 .about h2 em { color: var(--orange); font-family: Georgia, "Times New Roman", serif; font-weight: 700; }
-.about p { max-width: 920px; font-size: clamp(1rem, 1.6vw, 1.18rem); color: #e6e6e6; }
+.section-copy > p:not(.section-kicker) {
+  max-width: 920px;
+  color: #e6e6e6;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+}
+.why-intro { margin-bottom: 28px; }
 
 .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .button {
