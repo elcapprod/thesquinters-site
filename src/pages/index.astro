@@ -23,13 +23,14 @@ const podcastSchema = {
 <BaseLayout schema={podcastSchema}>
   <section class="hero home-hero" aria-labelledby="page-title">
     <div class="hero-copy">
-      	<p class="eyebrow">The <s>only</s> original GWS Giants podcast by Giants fans</p>
-		<h1 id="page-title">Never Surrender.<br>
-		<span>By The Squinters.</span></h1>
-		<p class="intro">Every week, after every Giants match, The Squinters biasedly review the game, preview the next one, speculate on the giant issues of the week and impartially discuss anything else that biasedly occurs to them.</p>
-    <div class="status">
-      <span aria-hidden="true"></span> Unauthorised. Unfiltered. Uninformed.
-    </div>
+      <p class="eyebrow">The <s>only</s> original GWS Giants podcast by Giants fans</p>
+      <h1 id="page-title">Never Surrender.<br>
+        <span>By The Squinters.</span>
+      </h1>
+      <p class="intro">Every week, after every Giants match, The Squinters biasedly review the game, preview the next one, speculate on the giant issues of the week and impartially discuss anything else that biasedly occurs to them.</p>
+      <div class="status">
+        <span aria-hidden="true"></span> Unauthorised. Unfiltered. Uninformed.
+      </div>
       <div class="button-row">
         <a class="button button-primary" href={`/episodes/${latest.slug}/`}>Latest episode</a>
         <a class="button button-secondary" href="/episodes/">Browse all episodes</a>
@@ -42,11 +43,9 @@ const podcastSchema = {
   </section>
 
   <section class="latest-section section-space" aria-labelledby="latest-title">
-    <div class="section-heading">
-      <div>
-        <p class="section-kicker">Fresh from the Studio</p>
-        <h2 id="latest-title">Latest episode</h2>
-      </div>
+    <div class="section-copy section-intro">
+      <p class="section-kicker">Fresh from the Studio</p>
+      <h2 id="latest-title">Latest episode</h2>
       <p>The latest episode of Never Surrender by The Squinters. The Big Big Sound delivered right here for your orange-flavoured listening pleasure.</p>
     </div>
     <div class="latest-grid">
@@ -82,7 +81,7 @@ const podcastSchema = {
 </section>
 
   <section class="section-space" aria-labelledby="why-title">
-    <div class="section-copy why-intro">
+    <div class="section-copy section-intro">
       <p class="section-kicker">Why listen?</p>
 
       <h2 id="why-title">
@@ -120,11 +119,9 @@ const podcastSchema = {
   </section>
 
   <section class="section-space" aria-labelledby="hosts-title">
-    <div class="section-heading">
-      <div>
-        <p class="section-kicker">Current operators</p>
-        <h2 id="hosts-title">Four microphones. One Zoom account.</h2>
-      </div>
+    <div class="section-copy section-intro">
+      <p class="section-kicker">Current operators</p>
+      <h2 id="hosts-title">Four microphones. One Zoom account.</h2>
       <p>Needles, Sparrow, Ragnar Lothbrok and Orca.</p>
     </div>
     <div class="host-grid">{hosts.map(host => <HostCard host={host} />)}</div>
@@ -133,11 +130,9 @@ const podcastSchema = {
   <section class="section-space"><RatingStrip /></section>
 
   <section class="links-section" aria-labelledby="links-title">
-    <div class="section-heading">
-      <div>
-        <p class="section-kicker">Everything Squinters</p>
-        <h2 id="links-title">Listen. Follow. Never Surrender.</h2>
-      </div>
+    <div class="section-copy section-intro">
+      <p class="section-kicker">Everything Squinters</p>
+      <h2 id="links-title">Listen. Follow. Never Surrender.</h2>
       <p>Pick your platform.</p>
     </div>
     <SocialGrid />

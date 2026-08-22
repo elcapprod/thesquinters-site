@@ -192,7 +192,7 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
   color: #e6e6e6;
   font-size: clamp(1rem, 1.6vw, 1.18rem);
 }
-.why-intro { margin-bottom: 28px; }
+.section-intro { margin-bottom: 28px; }
 
 /* ========================================
    Buttons & Text Links
@@ -222,8 +222,8 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
 .muted-link { color: var(--muted); }
 
 /* ========================================
-   Shared Section Headings
-   Used where title + supporting copy sit side-by-side
+   Split Section Headings
+   Retained for internal pages/components that use a two-column heading
 ======================================== */
 
 .section-heading {
