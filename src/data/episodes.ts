@@ -1,3 +1,13 @@
+export type MatchDetails = {
+  opponent: string;
+  fixtureLabel: string;
+  result?: string;
+  venue: string;
+  dateTime: string;
+  dateTimeLabel: string;
+  matchReportUrl?: string;
+};
+
 export type Episode = {
   episodeNumber: number;
   year: number;
@@ -10,6 +20,9 @@ export type Episode = {
   appleUrl: string;
   published?: string;
   publishedLabel?: string;
+  hosts?: string[];
+  lastGame?: MatchDetails;
+  nextGame?: MatchDetails;
 };
 
 export const episodes: Episode[] = [
@@ -18,8 +31,28 @@ export const episodes: Episode[] = [
     "year": 2026,
     "round": 23,
     "title": "NO. 138 - 2026 R23: EAGLES LOSING STREAK KEPT IN TACT!!! Now Let's Ruin Tex's Farewell Party",
-    "slug": "138-2026-r23-eagles-losing-streak-kept-in-tact-now-lets-ruin-texs-farewell-party",
+    "slug": "no-138-2026-r23-west-coast",
     "summary": "The Giants keep West Coast's losing streak intact with a 54-point win, the AFLW side opens with a win, and attention turns to spoiling Tex Walker's farewell at Adelaide Oval.",
+    "hosts": [
+        "Ragnar Lothbrok",
+        "Sparrow"
+    ],
+    "lastGame": {
+        "opponent": "West Coast Eagles",
+        "fixtureLabel": "GWS GIANTS v West Coast Eagles — Round 23",
+        "result": "GIANTS 16.15 (111) def West Coast 7.15 (57) by 54 points",
+        "venue": "ENGIE Stadium",
+        "dateTime": "2026-08-16T13:40:00+10:00",
+        "dateTimeLabel": "Sunday 16 August 2026 · 1:40pm AEST",
+        "matchReportUrl": "https://www.afl.com.au/afl/matches/8233#match-report"
+    },
+    "nextGame": {
+        "opponent": "Adelaide Crows",
+        "fixtureLabel": "Adelaide v GIANTS",
+        "venue": "Adelaide Oval",
+        "dateTime": "2026-08-22T19:40:00+09:30",
+        "dateTimeLabel": "Saturday 22 August 2026 · 8:10pm AEST / 7:40pm ACST"
+    },
     "body": [
         "A 9 game losing streak by the Eagles has been upheld by the Giants!!! That's a big win.",
         "And we have the chance to spoil the party for big Tex Walker. This is our GF.",

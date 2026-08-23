@@ -26,6 +26,18 @@ const schema = {
     { '@type': 'MediaObject', contentUrl: episode.spotifyUrl },
     { '@type': 'MediaObject', contentUrl: episode.appleUrl }
   ],
+  ...(episode.lastGame && {
+    about: {
+      '@type': 'SportsEvent',
+      name: episode.lastGame.fixtureLabel,
+      startDate: episode.lastGame.dateTime,
+      location: {
+        '@type': 'Place',
+        name: episode.lastGame.venue
+      },
+      ...(episode.lastGame.matchReportUrl && { url: episode.lastGame.matchReportUrl })
+    }
+  }),
   partOfSeries: { '@type': 'PodcastSeries', name: site.name, url: site.url }
 };
 ---
@@ -34,7 +46,7 @@ const schema = {
     <header class="episode-page-hero panel">
       <div class="episode-meta">
         <span>Episode {episode.episodeNumber}</span>
-        <span>2026 · Round {episode.round}</span>
+        <span>{episode.year} · Round {episode.round}</span>
         {episode.publishedLabel && <time datetime={episode.published}>{episode.publishedLabel}</time>}
       </div>
       <h1>{episode.title}</h1>
@@ -44,6 +56,53 @@ const schema = {
         <a class="button button-secondary" href={episode.appleUrl} target="_blank" rel="noopener noreferrer">Listen on Apple ↗</a>
       </div>
     </header>
+
+    {(episode.hosts || episode.lastGame || episode.nextGame) && (
+      <section class="episode-context panel" aria-labelledby="episode-context-title">
+        <div class="episode-context-heading">
+          <p class="section-kicker">The footy context</p>
+          <h2 id="episode-context-title">Who. What happened. What’s next.</h2>
+        </div>
+
+        <div class="episode-context-grid">
+          {episode.hosts && (
+            <div class="episode-context-item">
+              <span class="episode-context-label">On the pod</span>
+              <h3>{episode.hosts.join(' · ')}</h3>
+              <p>The Squinters behind the microphones for this episode.</p>
+            </div>
+          )}
+
+          {episode.lastGame && (
+            <div class="episode-context-item episode-context-game">
+              <span class="episode-context-label">Last game</span>
+              <h3>{episode.lastGame.fixtureLabel}</h3>
+              {episode.lastGame.result && <p class="match-result">{episode.lastGame.result}</p>}
+              <p>
+                {episode.lastGame.venue}<br>
+                <time datetime={episode.lastGame.dateTime}>{episode.lastGame.dateTimeLabel}</time>
+              </p>
+              {episode.lastGame.matchReportUrl && (
+                <a class="text-link" href={episode.lastGame.matchReportUrl} target="_blank" rel="noopener noreferrer">
+                  AFL match report ↗
+                </a>
+              )}
+            </div>
+          )}
+
+          {episode.nextGame && (
+            <div class="episode-context-item">
+              <span class="episode-context-label">Next</span>
+              <h3>{episode.nextGame.fixtureLabel}</h3>
+              <p>
+                {episode.nextGame.venue}<br>
+                <time datetime={episode.nextGame.dateTime}>{episode.nextGame.dateTimeLabel}</time>
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
 
     <div class="episode-content-grid section-space">
       <section class="episode-copy panel" aria-label="Episode description">

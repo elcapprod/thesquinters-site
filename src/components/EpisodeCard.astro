@@ -6,7 +6,7 @@ const { episode, featured = false } = Astro.props;
 <article class:list={["episode-card", featured && "episode-card-featured"]}>
   <div class="episode-meta">
     <span>Episode {episode.episodeNumber}</span>
-    <span>2026 · Round {episode.round}</span>
+    <span>{episode.year} · Round {episode.round}</span>
     {episode.publishedLabel && <time datetime={episode.published}>{episode.publishedLabel}</time>}
   </div>
   <h3><a href={`/episodes/${episode.slug}/`}>{episode.title}</a></h3>
