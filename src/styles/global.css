@@ -322,6 +322,7 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
 .why-history-card {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 3 / 2;
   min-height: 0;
   margin: 0;
   border: 1px solid var(--border);
@@ -337,9 +338,11 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
   pointer-events: none;
 }
 .why-history-card img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  height: 100%;
   object-fit: cover;
   transition: transform .25s ease;
 }
@@ -696,7 +699,6 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
   h1 { font-size: clamp(3rem,13vw,5.8rem); }
   .section-heading { grid-template-columns: 1fr; }
   .why-history-strip { grid-template-columns: 1fr; }
-  .why-history-card img { aspect-ratio: 16 / 9; }
   .about-grid { grid-template-columns: 1fr; }
   .about-image-wrap {
     max-width: 560px;
