@@ -87,6 +87,11 @@ const schema = {
                   AFL match report ↗
                 </a>
               )}
+              {episode.furtherReading?.map(link => (
+                <a class="text-link" href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.label} ↗
+                </a>
+              ))}
             </div>
           )}
 

@@ -8,6 +8,11 @@ export type MatchDetails = {
   matchReportUrl?: string;
 };
 
+export type FurtherReadingLink = {
+  label: string;
+  url: string;
+};
+
 export type Episode = {
   episodeNumber: number;
   year: number;
@@ -23,9 +28,74 @@ export type Episode = {
   hosts?: string[];
   lastGame?: MatchDetails;
   nextGame?: MatchDetails;
+  furtherReading?: FurtherReadingLink[];
 };
 
 export const episodes: Episode[] = [
+{
+  "episodeNumber": 139,
+  "year": 2026,
+  "round": 24,
+  "title": "NO. 139 - 2026 R24: The Season is Done... But THERE IS HOPE! We Think So Anyway... Farewell Briggsy, Hoges & The Package 🧡",
+  "slug": "no-139-2026-r24-adelaide",
+  "summary": "Season 2026 is done. Rags, Sparrow, Orca and Needles unpack the Adelaide loss, the injury carnage, Toby's future, the farewells to Briggsy, Hoges and The Package, and somehow find a little hope for 2027.",
+  "hosts": ["Ragnar Lothbrok", "Sparrow", "Orca", "Needles"],
+  "lastGame": {
+    "opponent": "Adelaide Crows",
+    "fixtureLabel": "Adelaide v GWS GIANTS — Round 24",
+    "result": "Adelaide 24.13 (157) def. GWS Giants 15.11 (101) by 56 points",
+    "venue": "Adelaide Oval, Adelaide",
+    "dateTime": "2026-08-22T19:40:00+09:30",
+    "dateTimeLabel": "Saturday 22 August 2026 · 8:10pm AEST / 7:40pm ACST",
+    "matchReportUrl": "https://www.afl.com.au/afl/matches/8243#match-report"
+  },
+  "furtherReading": [
+    {
+      "label": "Mongrel Punt match review",
+      "url": "https://themongrelpunt.com/afl-season-2026/2026/08/23/r24-adelaide-v-gws-the-big-statements/"
+    }
+  ],
+  "body": [
+    "Rags, Sparrow, Orca and POD PRESIDENT NEEDLES 😱 gather in the dust, under the fading glow of the sun setting on Season 2026, to reflect on one simple question:",
+    "What the hell happened in Season 2026?",
+    "There were moments of joy — THRASHING THE LIONS.",
+    "Moments of disillusion — Carlton.",
+    "And moments of shock and horror — West Coast. Essendon.",
+    "But amid the wreckage, we found some genuine gems.",
+    "Basilico’s on Parramatta Road.",
+    "A footballer with a magnificent rat’s tail.",
+    "And a phoenix rising from the ashes to give us something to believe in...",
+    "...until he got injured.",
+    "Like the rest of the team.",
+    "So, is there pressure on the players heading into 2027 to drag this club back into September? Of course.",
+    "But surely the people whose actual job is to get the players fit and ready to play football are under an even bigger microscope? You're on notice, Jacko and Dazza O'Neill.",
+    "Maybe it really was just bad luck.",
+    "Or maybe, just maybe, there’s a voodoo witch doctor somewhere in Footscray sticking pins into tiny orange-and-charcoal dolls.",
+    "At this point, either feels plausible.",
+    "Then there’s Toby. Will he stay? We bloody hope so. The DNA of the club.",
+    "But after everything that man has given this club, he’s earned the right to do whatever the hell he wants.",
+    "What a legend, and what a privilege it's been having him lead our club.",
+    "And then come the farewells. Farewell Briggsy. Farewell Hoges. Farewell Package. Thank you kindly for the blood, sweat and tears. Go well, Orange soldiers, into whatever assignments come next. 🧡",
+    "And somehow... that brings us here.",
+    "It feels horribly premature, but this is it.",
+    "No more songs.",
+    "No more soliloquies.",
+    "No more unnecessary late-night essays masquerading as podcast descriptions.",
+    "Well... until next season.",
+    "In the meantime — THIS WEBSITE IS BACK.",
+    "www.thesquinters.com",
+    "Bigger, better and destined for plenty more tinkering over the off-season.",
+    "But we want it to look like our club and our supporter base — so send us your photos of the Orange Army, Giants games, away trips, scarves, flags, strange rituals and whatever else you've captured along the way.",
+    "thesquinterspodcast@gmail.com",
+    "Thank you to everyone who listened, messaged, reviewed, contributed, abused us, corrected us and rode the emotional rollercoaster of 2026 alongside us.",
+    "Until next season...",
+    "NEVER SURRENDER."
+  ],
+  "spotifyUrl": "https://open.spotify.com/episode/7df2dvrXCcotyHxMJlTIQo?si=b73864baa3a64e39",
+  "appleUrl": "https://podcasts.apple.com/au/podcast/never-surrender-a-gws-giants-afl-podcast/id1467696542?i=1000786281983",
+  "published": "2026-08-27",
+  "publishedLabel": "27 August 2026"
+},
 {
     "episodeNumber": 138,
     "year": 2026,
