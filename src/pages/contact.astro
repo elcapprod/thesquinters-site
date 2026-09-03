@@ -43,7 +43,11 @@ import { site } from '../data/site';
       <h2 id="photo-callout-title">Send us your Giants photos.</h2>
       <p>We’re rebuilding thesquinters.com and want it to look like <strong>our club and our supporter base</strong> — not a collection of generic footy photos.</p>
       <p>Games, players, finals, marches to the G, iconic wins, miserable losses, snow games, scarves, flags, questionable costumes and whatever else you’ve captured along the way — we’d love to see it.</p>
-      <a class="button button-primary" href={`mailto:${site.email}?subject=Orange%20Army%20website%20photos`}>Send us your photos →</a>
+      <div class="photo-email-cta" aria-label="Email address for Orange Army photo submissions">
+        <strong>Send us your photos</strong>
+        <span>Email them to</span>
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+      </div>
     </div>
   </section>
 
