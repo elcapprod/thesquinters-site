@@ -416,6 +416,21 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
 .reason-card h3 { margin-bottom: 12px; }
 .reason-card p { margin-bottom: 0; color: #d9d9d9; }
 
+/* Text-only cards used outside the homepage image-card treatment */
+.general-text-card {
+  padding: clamp(20px, 2.5vw, 28px);
+}
+.general-text-card > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--orange-light);
+  font-size: .82rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+.general-text-card h3 { margin-bottom: 10px; }
+.general-text-card p { margin-bottom: 0; color: #d9d9d9; }
+
 /* ========================================
    Orange Army Visual Break
 ======================================== */
