@@ -724,13 +724,53 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
   border-color: rgba(244,122,0,.34);
   background: linear-gradient(135deg, rgba(244,122,0,.12), rgba(255,255,255,.045));
 }
+.match-outcome {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 1px 0 12px;
+  padding: 6px 10px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.match-outcome-win {
+  color: #c7f7d3;
+  border-color: rgba(85, 205, 118, .5);
+  background: rgba(45, 145, 74, .22);
+}
+.match-outcome-loss {
+  color: #ffd1cd;
+  border-color: rgba(239, 92, 80, .5);
+  background: rgba(170, 54, 45, .22);
+}
+.match-outcome-draw {
+  color: #eeeeee;
+  border-color: rgba(255,255,255,.28);
+  background: rgba(255,255,255,.08);
+}
 .episode-context-game .match-result {
   margin-bottom: 10px;
   color: var(--white);
   font-size: clamp(1.05rem, 1.7vw, 1.22rem);
   font-weight: 900;
 }
-.episode-context-item .text-link {
+.episode-context-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 14px;
+}
+.episode-context-links .text-link {
+  display: inline-block;
+  margin-top: 0;
+}
+.episode-context-item > .text-link {
   display: inline-block;
   margin-top: 14px;
 }

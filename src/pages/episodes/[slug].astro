@@ -15,6 +15,15 @@ const index = episodes.findIndex(item => item.slug === episode.slug);
 const newer = index > 0 ? episodes[index - 1] : undefined;
 const older = index < episodes.length - 1 ? episodes[index + 1] : undefined;
 const episodeUrl = `${site.url}/episodes/${episode.slug}/`;
+
+const gameOutcomeLabel = episode.lastGame?.outcome
+  ? episode.lastGame.outcome === 'draw'
+    ? 'DRAW'
+    : `${episode.lastGame.outcome.toUpperCase()}${typeof episode.lastGame.margin === 'number'
+        ? ` · ${episode.lastGame.margin} POINT${episode.lastGame.margin === 1 ? '' : 'S'}`
+        : ''}`
+  : undefined;
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'PodcastEpisode',
@@ -78,21 +87,30 @@ const schema = {
             <div class="episode-context-item episode-context-game">
               <span class="episode-context-label">Snapshot of the game</span>
               <h3>{episode.lastGame.fixtureLabel}</h3>
+              {gameOutcomeLabel && episode.lastGame.outcome && (
+                <span class:list={["match-outcome", `match-outcome-${episode.lastGame.outcome}`]}>
+                  {gameOutcomeLabel}
+                </span>
+              )}
               {episode.lastGame.result && <p class="match-result">{episode.lastGame.result}</p>}
               <p>
                 {venueLabel(episode.lastGame.venueId)}<br>
                 <time datetime={episode.lastGame.dateTime}>{episode.lastGame.dateTimeLabel}</time>
               </p>
-              {episode.lastGame.matchReportUrl && (
-                <a class="text-link" href={episode.lastGame.matchReportUrl} target="_blank" rel="noopener noreferrer">
-                  AFL match report ↗
-                </a>
+              {(episode.lastGame.matchReportUrl || episode.furtherReading?.length) && (
+                <div class="episode-context-links">
+                  {episode.lastGame.matchReportUrl && (
+                    <a class="text-link" href={episode.lastGame.matchReportUrl} target="_blank" rel="noopener noreferrer">
+                      AFL match report ↗
+                    </a>
+                  )}
+                  {episode.furtherReading?.map(link => (
+                    <a class="text-link" href={link.url} target="_blank" rel="noopener noreferrer">
+                      {link.label} ↗
+                    </a>
+                  ))}
+                </div>
               )}
-              {episode.furtherReading?.map(link => (
-                <a class="text-link" href={link.url} target="_blank" rel="noopener noreferrer">
-                  {link.label} ↗
-                </a>
-              ))}
             </div>
           )}
 
