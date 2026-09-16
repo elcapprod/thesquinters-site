@@ -22,6 +22,7 @@ export const hosts: Record<string, TaxonomyItem> = {
 export const opponents: Record<string, TaxonomyItem> = {
   "adelaide-crows": { id: "adelaide-crows", label: "Adelaide Crows" },
   "brisbane-lions": { id: "brisbane-lions", label: "Brisbane Lions" },
+  "essendon-bombers": { id: "essendon-bombers", label: "Essendon Bombers" },
   "west-coast-eagles": { id: "west-coast-eagles", label: "West Coast Eagles" }
 };
 
@@ -44,6 +45,12 @@ export const segments: Record<string, TaxonomyItem> = {
 
 export const topics: Record<string, TaxonomyItem> = {
   "toby-greene": { id: "toby-greene", label: "Toby Greene" },
+  "josh-kelly": { id: "josh-kelly", label: "Josh Kelly" },
+  "comeback-win": { id: "comeback-win", label: "Comeback win" },
+  "brent-daniels": { id: "brent-daniels", label: "Brent Daniels" },
+  "toby-bedford": { id: "toby-bedford", label: "Toby Bedford" },
+  "young-players-list-development": { id: "young-players-list-development", label: "Young players and list development" },
+  "umpiring-afl-media-narratives": { id: "umpiring-afl-media-narratives", label: "Umpiring / AFL media narratives" },
   "clayton-oliver": { id: "clayton-oliver", label: "Clayton Oliver" },
   "gws-injuries": { id: "gws-injuries", label: "GWS injuries" },
   "gws-ceo": { id: "gws-ceo", label: "GWS CEO" },

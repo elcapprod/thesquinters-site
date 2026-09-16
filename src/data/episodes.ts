@@ -564,6 +564,91 @@ export const episodes: Episode[] = [
     "published": "2026-05-20",
     "publishedLabel": "20 May 2026"
   }
+,
+  {
+    "episodeNumber": 124,
+    "year": 2026,
+    "round": 9,
+    "title": "NO. 124 - 2026 - R9: A WIN against the Bombers back at the Beanstalk!! PLUS, a preview of the Eagles game, Rag's bets, we hear from Jimmy, A NEW SONG, and more...!!!",
+    "slug": "no-124-2026-r9-essendon",
+    "summary": "This episode was massive. Not so much cause we played so well in our win over the Bombers — it was actually mostly ugly to watch — but MAN there's some GREATER WESTERN SYDNEY GIANTS chat out there at the moment.",
+    "episodeType": "regular",
+    "hosts": [
+      "ragnar-lothbrok",
+      "sparrow",
+      "orca"
+    ],
+    "guests": [],
+    "lastGame": {
+      "opponentId": "essendon-bombers",
+      "fixtureLabel": "GWS GIANTS v Essendon Bombers — Round 9",
+      "result": "GWS Giants 16.7 (103) def. Essendon 13.11 (89) by 14 points",
+      "outcome": "win",
+      "gwsScore": 103,
+      "opponentScore": 89,
+      "margin": 14,
+      "venueId": "engie-stadium",
+      "dateTime": "2026-05-09T16:15:00+10:00",
+      "dateTimeLabel": "Saturday 9 May 2026 · 4:15pm AEST",
+      "matchReportUrl": "https://www.afl.com.au/afl/matches/8115#match-report"
+    },
+    "nextGame": {
+      "opponentId": "west-coast-eagles",
+      "fixtureLabel": "West Coast Eagles v GWS GIANTS",
+      "venueId": "optus-stadium",
+      "dateTime": "2026-05-17T18:15:00+10:00",
+      "dateTimeLabel": "Sunday 17 May 2026 · 6:15pm AEST"
+    },
+    "furtherReading": [
+      {
+        "label": "Mongrel Punt review",
+        "url": "https://themongrelpunt.com/afl-season-2026/2026/05/09/r9-gws-v-essendon-the-good-bad-and-ugly/"
+      }
+    ],
+    "segments": [
+      {
+        "id": "rags-bet",
+        "note": "Rag's Bet."
+      },
+      {
+        "id": "ragnars-maths",
+        "note": "Ragnar's Maths."
+      },
+      {
+        "id": "ragnar-parody-song",
+        "note": "Brent Daniels parody song — Ragnar performs the new Daniel / Elton John-inspired song."
+      },
+      {
+        "id": "hairloss",
+        "note": "Hairloss with Orca."
+      },
+      {
+        "id": "song-of-the-week",
+        "note": "Frontier Psychiatrist by The Avalanches; effectively the death of Song of the Week because of the copyright dramas."
+      }
+    ],
+    "topics": [
+      "josh-kelly",
+      "comeback-win",
+      "toby-greene",
+      "brent-daniels",
+      "gws-injuries",
+      "toby-bedford",
+      "young-players-list-development",
+      "umpiring-afl-media-narratives"
+    ],
+    "body": [
+      "This episode was massive. Not so much cause we played so well in our win over the Bombers — it was actually mostly ugly to watch (hence Sparrow's long run at half-time) — but MAN there's some GREATER WESTERN SYDNEY (GWS, Scotty) GIANTS chat out there at the moment.",
+      "And being the 𝑜̶𝑛̶𝑙̶𝑦̶ original unfiltered, unauthorised, and uninformed Giants fancast, it naturally falls on us to discuss all that's happening in the Orange Army.",
+      "Toby's NOT leaving, the Kid with Lid is a miracle healer, and Connor Idun is the Smother GOAT. They're the main headlines you need to know.",
+      "So sit back, extend your drive to work by another 15 minutes (thanks Zoom Premium), and enjoy the banter — AND THE NEW SONG FROM RAGS!!!",
+      "Never Surrender."
+    ],
+    "spotifyUrl": "https://open.spotify.com/episode/20Wqfi9RMjbwx5CDdkHKzF?si=e06daeeea97c4bd7",
+    "appleUrl": "https://podcasts.apple.com/au/podcast/never-surrender-a-gws-giants-afl-podcast/id1467696542?i=1000767577774",
+    "published": "2026-05-13",
+    "publishedLabel": "13 May 2026"
+  }
 
 ];
 
