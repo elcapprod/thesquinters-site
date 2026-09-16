@@ -72,7 +72,7 @@ export const episodes: Episode[] = [
   },
   "furtherReading": [
     {
-      "label": "Mongrel Punt match review",
+      "label": "Mongrel Punt review",
       "url": "https://themongrelpunt.com/afl-season-2026/2026/08/23/r24-adelaide-v-gws-the-big-statements/"
     }
   ],
@@ -493,7 +493,7 @@ export const episodes: Episode[] = [
     },
     "furtherReading": [
       {
-        "label": "Mongrel Punt match review",
+        "label": "Mongrel Punt review",
         "url": "https://themongrelpunt.com/afl-season-2026/2026/05/17/r10-west-coast-v-gws-the-mongrel-review/"
       }
     ],

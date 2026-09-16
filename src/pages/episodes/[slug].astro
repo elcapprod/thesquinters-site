@@ -76,7 +76,7 @@ const schema = {
 
           {episode.lastGame && (
             <div class="episode-context-item episode-context-game">
-              <span class="episode-context-label">Last game</span>
+              <span class="episode-context-label">Snapshot of the game</span>
               <h3>{episode.lastGame.fixtureLabel}</h3>
               {episode.lastGame.result && <p class="match-result">{episode.lastGame.result}</p>}
               <p>
@@ -98,7 +98,7 @@ const schema = {
 
           {episode.nextGame && (
             <div class="episode-context-item">
-              <span class="episode-context-label">Next</span>
+              <span class="episode-context-label">Next game</span>
               <h3>{episode.nextGame.fixtureLabel}</h3>
               <p>
                 {venueLabel(episode.nextGame.venueId)}<br>
