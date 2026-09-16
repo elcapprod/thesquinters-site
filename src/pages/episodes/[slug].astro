@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SocialGrid from '../../components/SocialGrid.astro';
 import { episodes, spotifyEmbedUrl, type Episode } from '../../data/episodes';
 import { site } from '../../data/site';
+import { hostLabel, venueLabel } from '../../data/episodeTaxonomy';
 
 export function getStaticPaths() {
   return episodes.map(episode => ({ params: { slug: episode.slug }, props: { episode } }));
@@ -33,7 +34,7 @@ const schema = {
       startDate: episode.lastGame.dateTime,
       location: {
         '@type': 'Place',
-        name: episode.lastGame.venue
+        name: venueLabel(episode.lastGame.venueId)
       },
       ...(episode.lastGame.matchReportUrl && { url: episode.lastGame.matchReportUrl })
     }
@@ -68,7 +69,7 @@ const schema = {
           {episode.hosts && (
             <div class="episode-context-item">
               <span class="episode-context-label">On the pod</span>
-              <h3>{episode.hosts.join(' · ')}</h3>
+              <h3>{episode.hosts.map(hostLabel).join(' · ')}</h3>
               <p>The Squinters behind the microphones for this episode.</p>
             </div>
           )}
@@ -79,7 +80,7 @@ const schema = {
               <h3>{episode.lastGame.fixtureLabel}</h3>
               {episode.lastGame.result && <p class="match-result">{episode.lastGame.result}</p>}
               <p>
-                {episode.lastGame.venue}<br>
+                {venueLabel(episode.lastGame.venueId)}<br>
                 <time datetime={episode.lastGame.dateTime}>{episode.lastGame.dateTimeLabel}</time>
               </p>
               {episode.lastGame.matchReportUrl && (
@@ -100,7 +101,7 @@ const schema = {
               <span class="episode-context-label">Next</span>
               <h3>{episode.nextGame.fixtureLabel}</h3>
               <p>
-                {episode.nextGame.venue}<br>
+                {venueLabel(episode.nextGame.venueId)}<br>
                 <time datetime={episode.nextGame.dateTime}>{episode.nextGame.dateTimeLabel}</time>
               </p>
             </div>

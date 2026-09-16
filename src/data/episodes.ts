@@ -1,8 +1,14 @@
+export type MatchOutcome = "win" | "loss" | "draw";
+
 export type MatchDetails = {
-  opponent: string;
+  opponentId: string;
   fixtureLabel: string;
   result?: string;
-  venue: string;
+  outcome?: MatchOutcome;
+  gwsScore?: number;
+  opponentScore?: number;
+  margin?: number;
+  venueId: string;
   dateTime: string;
   dateTimeLabel: string;
   matchReportUrl?: string;
@@ -11,6 +17,12 @@ export type MatchDetails = {
 export type FurtherReadingLink = {
   label: string;
   url: string;
+};
+
+export type EpisodeSegment = {
+  id: string;
+  startTime?: string;
+  note?: string;
 };
 
 export type Episode = {
@@ -25,7 +37,11 @@ export type Episode = {
   appleUrl: string;
   published?: string;
   publishedLabel?: string;
+  episodeType?: string;
   hosts?: string[];
+  guests?: string[];
+  segments?: EpisodeSegment[];
+  topics?: string[];
   lastGame?: MatchDetails;
   nextGame?: MatchDetails;
   furtherReading?: FurtherReadingLink[];
@@ -39,12 +55,17 @@ export const episodes: Episode[] = [
   "title": "NO. 139 - 2026 R24: The Season is Done... But THERE IS HOPE! We Think So Anyway... Farewell Briggsy, Hoges & The Package 🧡",
   "slug": "no-139-2026-r24-adelaide",
   "summary": "Season 2026 is done. Rags, Sparrow, Orca and Needles unpack the Adelaide loss, the injury carnage, Toby's future, the farewells to Briggsy, Hoges and The Package, and somehow find a little hope for 2027.",
-  "hosts": ["Ragnar Lothbrok", "Sparrow", "Orca", "Needles"],
+  "episodeType": "season-review",
+  "hosts": ["ragnar-lothbrok", "sparrow", "orca", "needles"],
   "lastGame": {
-    "opponent": "Adelaide Crows",
+    "opponentId": "adelaide-crows",
     "fixtureLabel": "Adelaide v GWS GIANTS — Round 24",
     "result": "Adelaide 24.13 (157) def. GWS Giants 15.11 (101) by 56 points",
-    "venue": "Adelaide Oval, Adelaide",
+    "outcome": "loss",
+    "gwsScore": 101,
+    "opponentScore": 157,
+    "margin": 56,
+    "venueId": "adelaide-oval",
     "dateTime": "2026-08-22T19:40:00+09:30",
     "dateTimeLabel": "Saturday 22 August 2026 · 8:10pm AEST / 7:40pm ACST",
     "matchReportUrl": "https://www.afl.com.au/afl/matches/8243#match-report"
@@ -103,23 +124,28 @@ export const episodes: Episode[] = [
     "title": "NO. 138 - 2026 R23: EAGLES LOSING STREAK KEPT IN TACT!!! Now Let's Ruin Tex's Farewell Party",
     "slug": "no-138-2026-r23-west-coast",
     "summary": "The Giants keep West Coast's losing streak intact with a 54-point win, the AFLW side opens with a win, and attention turns to spoiling Tex Walker's farewell at Adelaide Oval.",
+    "episodeType": "regular",
     "hosts": [
-        "Ragnar Lothbrok",
-        "Sparrow"
+        "ragnar-lothbrok",
+        "sparrow"
     ],
     "lastGame": {
-        "opponent": "West Coast Eagles",
+        "opponentId": "west-coast-eagles",
         "fixtureLabel": "GWS GIANTS v West Coast Eagles — Round 23",
         "result": "GIANTS 16.15 (111) def West Coast 7.15 (57) by 54 points",
-        "venue": "ENGIE Stadium",
+        "outcome": "win",
+        "gwsScore": 111,
+        "opponentScore": 57,
+        "margin": 54,
+        "venueId": "engie-stadium",
         "dateTime": "2026-08-16T13:40:00+10:00",
         "dateTimeLabel": "Sunday 16 August 2026 · 1:40pm AEST",
         "matchReportUrl": "https://www.afl.com.au/afl/matches/8233#match-report"
     },
     "nextGame": {
-        "opponent": "Adelaide Crows",
+        "opponentId": "adelaide-crows",
         "fixtureLabel": "Adelaide v GIANTS",
-        "venue": "Adelaide Oval",
+        "venueId": "adelaide-oval",
         "dateTime": "2026-08-22T19:40:00+09:30",
         "dateTimeLabel": "Saturday 22 August 2026 · 8:10pm AEST / 7:40pm ACST"
     },
@@ -430,7 +456,115 @@ export const episodes: Episode[] = [
     ],
     "spotifyUrl": "https://open.spotify.com/episode/6yVTfvdgjkWh4GP23bCo5H?si=20ea5c1772f64263",
     "appleUrl": "https://podcasts.apple.com/au/podcast/never-surrender-a-gws-giants-afl-podcast/id1467696542?i=1000769916575"
+  },
+  {
+    "episodeNumber": 125,
+    "year": 2026,
+    "round": 10,
+    "title": "NO. 125 - 2026 - R10: The Giants dealt a blow by ....(who??!!) BAILEY WILLIAMS!!! I mean, c'mon... (this time of year is tough for the Orange Army).",
+    "slug": "no-125-2026-r10-west-coast",
+    "summary": "All we can do is look forward. Rags, Sparrow and Orca try to forget Bailey Williams and the Harley Show, take Stoic Advice from Seneca and march on to Brisbane at the Beanstalk.",
+    "episodeType": "regular",
+    "hosts": [
+      "ragnar-lothbrok",
+      "sparrow",
+      "orca"
+    ],
+    "guests": [],
+    "lastGame": {
+      "opponentId": "west-coast-eagles",
+      "fixtureLabel": "West Coast Eagles v GWS GIANTS — Round 10",
+      "result": "West Coast 13.10 (88) def. GWS Giants 10.11 (71) by 17 points",
+      "outcome": "loss",
+      "gwsScore": 71,
+      "opponentScore": 88,
+      "margin": 17,
+      "venueId": "optus-stadium",
+      "dateTime": "2026-05-17T18:15:00+10:00",
+      "dateTimeLabel": "Sunday 17 May 2026 · 6:15pm AEST",
+      "matchReportUrl": "https://www.afl.com.au/afl/matches/8128#match-report"
+    },
+    "nextGame": {
+      "opponentId": "brisbane-lions",
+      "fixtureLabel": "GWS GIANTS v Brisbane Lions",
+      "venueId": "engie-stadium",
+      "dateTime": "2026-05-24T12:30:00+10:00",
+      "dateTimeLabel": "Sunday 24 May 2026 · 12:30pm AEST"
+    },
+    "furtherReading": [
+      {
+        "label": "Mongrel Punt match review",
+        "url": "https://themongrelpunt.com/afl-season-2026/2026/05/17/r10-west-coast-v-gws-the-mongrel-review/"
+      }
+    ],
+    "segments": [
+      {
+        "id": "ragnar-parody-song",
+        "startTime": "00:20",
+        "note": "“We All Backed Down” — Tom Petty parody about the West Coast loss."
+      },
+      {
+        "id": "stoic-advice",
+        "startTime": "09:46",
+        "note": "Explicitly introduced as a new segment. Seneca used to deal with the Toby Greene/Geelong anxiety: don't suffer twice — once over Jezza in the past and once over something Toby hasn't actually done yet."
+      },
+      {
+        "id": "stay-or-pay",
+        "startTime": "12:43",
+        "note": "A one-off game about Toby Greene. Each host rates from 1 = Giants for life to 10 = gone."
+      },
+      {
+        "id": "rags-bake",
+        "startTime": "18:10",
+        "note": "The official bake begins as Rags leads off the West Coast review."
+      },
+      {
+        "id": "ragnars-maths",
+        "startTime": "29:19",
+        "note": "Team age comparison with West Coast, Clayton Oliver and the Mongrel Punt's 30/20/10 club, plus other statistical nonsense."
+      },
+      {
+        "id": "rags-bet",
+        "startTime": "46:11",
+        "note": "Previous week's bet lost; this week's bet was Brisbane at the line. Includes the responsible gambling insert."
+      },
+      {
+        "id": "hairloss",
+        "startTime": "55:20",
+        "note": "Orca gives the Hairloss nomination to wrestler Osborne after being called a “bald headed freak” at a wrestling show."
+      },
+      {
+        "id": "song-of-the-week",
+        "startTime": "57:12",
+        "note": "Don't Look Back in Anger — Oasis, representing making peace with the Giants after the West Coast loss."
+      }
+    ],
+    "topics": [
+      "toby-greene",
+      "clayton-oliver",
+      "gws-injuries",
+      "gws-ceo",
+      "western-sydney",
+      "canberra"
+    ],
+    "body": [
+      "All we can do is look forward.",
+      "Not look back — or west — and pretend that Bailey Willams and the Harley Show never happened.",
+      "Sure it's denial.",
+      "Sure it fails to deal with the problem.",
+      "But the pain is too deep.",
+      "Let's just all get down to GMHBA stadium in Geelong and beat the Ca...oh wait, no Cats game this year to reserrect our season... damnit.",
+      "SO IT'S TO THE BEANSTALK WE MARCH!!!",
+      "Pony Up Orange Army. Take some stoic advice from Seneca via Sparrow, enjoy the latest tune from Ragnar, and reflect with reflections from Orca, and let's lift each other up and out of the Guildford Hotel gutter.",
+      "Onwards and upwards in our quest for 10th on the ladder!",
+      "Never Surrender."
+    ],
+    "spotifyUrl": "https://open.spotify.com/episode/33uRgoHX1p2sJZr77WDM0D?si=1218cd75cdd64abc",
+    "appleUrl": "https://podcasts.apple.com/au/podcast/never-surrender-a-gws-giants-afl-podcast/id1467696542?i=1000768743686",
+    "published": "2026-05-20",
+    "publishedLabel": "20 May 2026"
   }
+
 ];
 
 export function spotifyEmbedUrl(url: string): string {
