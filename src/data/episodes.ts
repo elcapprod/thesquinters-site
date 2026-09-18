@@ -19,6 +19,14 @@ export type FurtherReadingLink = {
   url: string;
 };
 
+export type EpisodeSnapshot = {
+  title: string;
+  body: string;
+  dateTime?: string;
+  dateTimeLabel?: string;
+  links?: FurtherReadingLink[];
+};
+
 export type EpisodeSegment = {
   id: string;
   startTime?: string;
@@ -28,7 +36,7 @@ export type EpisodeSegment = {
 export type Episode = {
   episodeNumber: number;
   year: number;
-  round: number;
+  round?: number | null;
   title: string;
   slug: string;
   summary: string;
@@ -40,14 +48,82 @@ export type Episode = {
   episodeType?: string;
   hosts?: string[];
   guests?: string[];
+  contributors?: string[];
   segments?: EpisodeSegment[];
   topics?: string[];
+  snapshot?: EpisodeSnapshot;
   lastGame?: MatchDetails;
   nextGame?: MatchDetails;
   furtherReading?: FurtherReadingLink[];
 };
 
 export const episodes: Episode[] = [
+{
+  "episodeNumber": 140,
+  "year": 2026,
+  "round": null,
+  "title": "NO. 140 - 2026 EMERGENCY POD: Toby Greene leaves GWS for Geelong",
+  "slug": "no-140-2026-emergency-pod-toby-greene-geelong",
+  "summary": "Toby Greene is leaving GWS for Geelong. Sparrow, Ragnar and special guest Yash jump on for an emergency pod to process the news, reflect on Toby's legacy and look at what comes next for the Giants.",
+  "episodeType": "emergency-pod",
+  "hosts": [
+    "ragnar-lothbrok",
+    "sparrow"
+  ],
+  "guests": [
+    "Yash"
+  ],
+  "contributors": [
+    "Needles",
+    "Orca",
+    "Andy",
+    "Number 3",
+    "Al",
+    "Elsie",
+    "Alicia"
+  ],
+  "snapshot": {
+    "title": "Toby Greene leaves GWS",
+    "body": "Toby Greene has advised the GIANTS of his intention to move back to Victoria for family reasons, with a view to join the Geelong Football Club.",
+    "dateTime": "2026-09-17T09:11:00+10:00",
+    "dateTimeLabel": "Announced Thursday 17 September 2026 · 9:11am AEST",
+    "links": [
+      {
+        "label": "GIANTS club statement",
+        "url": "https://www.gwsgiants.com.au/news/2131841/club-statement-toby-greene"
+      },
+      {
+        "label": "Squinters reaction on X",
+        "url": "https://x.com/TheSquinters/status/2100371947750326621"
+      }
+    ]
+  },
+  "segments": [
+    { "id": "rags-bake" },
+    { "id": "ragnars-maths" },
+    { "id": "rags-bet" }
+  ],
+  "topics": [
+    "toby-greene",
+    "list-management",
+    "geelong-cats",
+    "player-movement"
+  ],
+  "body": [
+    "We knew it might be coming.",
+    "That doesn't make it hurt any less.",
+    "Toby Greene has told the GIANTS he's leaving GWS and heading to Geelong, bringing one of the biggest chapters in club history to an end.",
+    "Sparrow, Ragnar and special guest Yash jump on for an emergency pod to process the news, reflect on Toby's legacy, and speculate on how the Giants look post-TFG.",
+    "Loyal Listeners have their say, Orca and Needles check in from afar, and we try to make sense of the end of an era.",
+    "We love you Toby. We'll miss you mate.",
+    "Stay Strong Orange Army, and remember:",
+    "Never Surrender."
+  ],
+  "spotifyUrl": "https://open.spotify.com/episode/4ntXrligvrHQwLaDTGbPXn?si=e78c9c2aa7e34e66",
+  "appleUrl": "https://podcasts.apple.com/au/podcast/never-surrender-a-gws-giants-afl-podcast/id1467696542?i=1000790357111",
+  "published": "2026-09-17",
+  "publishedLabel": "17 September 2026"
+},
 {
   "episodeNumber": 139,
   "year": 2026,

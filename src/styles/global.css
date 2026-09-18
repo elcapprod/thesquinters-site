@@ -720,6 +720,26 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
   margin-bottom: 0;
   color: #dedede;
 }
+.episode-context-detail + .episode-context-detail {
+  margin-top: 10px;
+}
+.episode-context-detail strong {
+  color: var(--white);
+}
+.episode-context-grid-two {
+  grid-template-columns: minmax(240px, .78fr) minmax(0, 1.55fr);
+}
+.episode-context-snapshot .snapshot-copy {
+  max-width: 720px;
+  color: var(--white);
+  font-size: clamp(1.02rem, 1.5vw, 1.16rem);
+  line-height: 1.5;
+}
+.episode-context-snapshot .snapshot-date {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: .92rem;
+}
 .episode-context-game {
   border-color: rgba(244,122,0,.34);
   background: linear-gradient(135deg, rgba(244,122,0,.12), rgba(255,255,255,.045));
@@ -820,7 +840,8 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
 @media (max-width: 920px) {
   .latest-grid, .episode-content-grid { grid-template-columns: 1fr; }
   .episode-context-grid { grid-template-columns: 1fr 1fr; }
-  .episode-context-game { grid-column: span 2; }
+  .episode-context-grid-two { grid-template-columns: 1fr 1.4fr; }
+  .episode-context-grid:not(.episode-context-grid-two) .episode-context-game { grid-column: span 2; }
   .about-grid { grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); }
   .episode-sidebar { position: static; }
   .host-card { grid-template-columns: 150px 1fr; }
@@ -899,7 +920,8 @@ h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.2; }
   .rating-strip { flex-direction: column; gap: 4px; }
   .rating-strip i { display: none; }
   .episode-page { padding-top: 50px; }
-  .episode-context-grid { grid-template-columns: 1fr; }
+  .episode-context-grid,
+  .episode-context-grid-two { grid-template-columns: 1fr; }
   .episode-context-game { grid-column: auto; }
   .episode-context-item { padding: 20px; }
   .episode-pagination { grid-template-columns: 1fr 1fr; }

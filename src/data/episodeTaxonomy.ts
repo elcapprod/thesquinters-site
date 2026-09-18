@@ -7,6 +7,7 @@ export const episodeTypes: Record<string, TaxonomyItem> = {
   "regular": { id: "regular", label: "Regular episode" },
   "finals": { id: "finals", label: "Finals episode" },
   "season-review": { id: "season-review", label: "Season review" },
+  "emergency-pod": { id: "emergency-pod", label: "Emergency pod" },
   "interview": { id: "interview", label: "Interview" },
   "special": { id: "special", label: "Special episode" },
   "off-season": { id: "off-season", label: "Off-season" }
@@ -55,7 +56,10 @@ export const topics: Record<string, TaxonomyItem> = {
   "gws-injuries": { id: "gws-injuries", label: "GWS injuries" },
   "gws-ceo": { id: "gws-ceo", label: "GWS CEO" },
   "western-sydney": { id: "western-sydney", label: "Western Sydney" },
-  "canberra": { id: "canberra", label: "Canberra" }
+  "canberra": { id: "canberra", label: "Canberra" },
+  "list-management": { id: "list-management", label: "List management" },
+  "geelong-cats": { id: "geelong-cats", label: "Geelong Cats" },
+  "player-movement": { id: "player-movement", label: "Player movement" }
 };
 
 export function taxonomyLabel(

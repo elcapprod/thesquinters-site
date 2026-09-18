@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SocialGrid from '../../components/SocialGrid.astro';
 import { episodes, spotifyEmbedUrl, type Episode } from '../../data/episodes';
 import { site } from '../../data/site';
-import { hostLabel, venueLabel } from '../../data/episodeTaxonomy';
+import { episodeTypeLabel, hostLabel, venueLabel } from '../../data/episodeTaxonomy';
 
 export function getStaticPaths() {
   return episodes.map(episode => ({ params: { slug: episode.slug }, props: { episode } }));
@@ -15,6 +15,11 @@ const index = episodes.findIndex(item => item.slug === episode.slug);
 const newer = index > 0 ? episodes[index - 1] : undefined;
 const older = index < episodes.length - 1 ? episodes[index + 1] : undefined;
 const episodeUrl = `${site.url}/episodes/${episode.slug}/`;
+const episodeContextMeta = episode.round
+  ? `Round ${episode.round}`
+  : episode.episodeType
+    ? episodeTypeLabel(episode.episodeType)
+    : undefined;
 
 const gameOutcomeLabel = episode.lastGame?.outcome
   ? episode.lastGame.outcome === 'draw'
@@ -48,6 +53,14 @@ const schema = {
       ...(episode.lastGame.matchReportUrl && { url: episode.lastGame.matchReportUrl })
     }
   }),
+  ...(!episode.lastGame && episode.snapshot && {
+    about: {
+      '@type': 'Thing',
+      name: episode.snapshot.title,
+      description: episode.snapshot.body,
+      ...(episode.snapshot.links?.[0]?.url && { url: episode.snapshot.links[0].url })
+    }
+  }),
   partOfSeries: { '@type': 'PodcastSeries', name: site.name, url: site.url }
 };
 ---
@@ -56,7 +69,7 @@ const schema = {
     <header class="episode-page-hero panel">
       <div class="episode-meta">
         <span>Episode {episode.episodeNumber}</span>
-        <span>{episode.year} · Round {episode.round}</span>
+        <span>{episode.year}{episodeContextMeta && ` · ${episodeContextMeta}`}</span>
         {episode.publishedLabel && <time datetime={episode.published}>{episode.publishedLabel}</time>}
       </div>
       <h1>{episode.title}</h1>
@@ -67,25 +80,60 @@ const schema = {
       </div>
     </header>
 
-    {(episode.hosts || episode.lastGame || episode.nextGame) && (
+    {(episode.hosts || episode.guests?.length || episode.contributors?.length || episode.snapshot || episode.lastGame || episode.nextGame) && (
       <section class="episode-context panel" aria-labelledby="episode-context-title">
         <div class="episode-context-heading">
           <p class="section-kicker">The footy context</p>
           <h2 id="episode-context-title">Who. What happened. What’s next.</h2>
         </div>
 
-        <div class="episode-context-grid">
-          {episode.hosts && (
+        <div class:list={[
+          "episode-context-grid",
+          episode.snapshot && !episode.lastGame && !episode.nextGame && "episode-context-grid-two"
+        ]}>
+          {(episode.hosts || episode.guests?.length || episode.contributors?.length) && (
             <div class="episode-context-item">
               <span class="episode-context-label">On the pod</span>
-              <h3>{episode.hosts.map(hostLabel).join(' · ')}</h3>
-              <p>The Squinters behind the microphones for this episode.</p>
+              {episode.hosts && <h3>{episode.hosts.map(hostLabel).join(' · ')}</h3>}
+              {episode.guests?.length && (
+                <p class="episode-context-detail"><strong>Special guest:</strong> {episode.guests.join(' · ')}</p>
+              )}
+              {episode.contributors?.length && (
+                <p class="episode-context-detail"><strong>Loyal Listener contributions:</strong> {episode.contributors.join(', ')}</p>
+              )}
+              {!episode.guests?.length && !episode.contributors?.length && (
+                <p>The Squinters behind the microphones for this episode.</p>
+              )}
+            </div>
+          )}
+
+          {episode.snapshot && !episode.lastGame && (
+            <div class="episode-context-item episode-context-game episode-context-snapshot">
+              <span class="episode-context-label">Snapshot</span>
+              <h3>{episode.snapshot.title}</h3>
+              <p class="snapshot-copy">{episode.snapshot.body}</p>
+              {episode.snapshot.dateTimeLabel && (
+                <p class="snapshot-date">
+                  {episode.snapshot.dateTime
+                    ? <time datetime={episode.snapshot.dateTime}>{episode.snapshot.dateTimeLabel}</time>
+                    : episode.snapshot.dateTimeLabel}
+                </p>
+              )}
+              {episode.snapshot.links?.length && (
+                <div class="episode-context-links">
+                  {episode.snapshot.links.map(link => (
+                    <a class="text-link" href={link.url} target="_blank" rel="noopener noreferrer">
+                      {link.label} ↗
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
           {episode.lastGame && (
             <div class="episode-context-item episode-context-game">
-              <span class="episode-context-label">Snapshot of the game</span>
+              <span class="episode-context-label">Snapshot</span>
               <h3>{episode.lastGame.fixtureLabel}</h3>
               {gameOutcomeLabel && episode.lastGame.outcome && (
                 <span class:list={["match-outcome", `match-outcome-${episode.lastGame.outcome}`]}>
@@ -116,7 +164,7 @@ const schema = {
 
           {episode.nextGame && (
             <div class="episode-context-item">
-              <span class="episode-context-label">Next game</span>
+              <span class="episode-context-label">Next up</span>
               <h3>{episode.nextGame.fixtureLabel}</h3>
               <p>
                 {venueLabel(episode.nextGame.venueId)}<br>
