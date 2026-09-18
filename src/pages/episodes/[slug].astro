@@ -64,7 +64,12 @@ const schema = {
   partOfSeries: { '@type': 'PodcastSeries', name: site.name, url: site.url }
 };
 ---
-<BaseLayout title={episode.title} description={episode.summary} canonicalPath={`/episodes/${episode.slug}/`} schema={schema}>
+<BaseLayout
+  title={episode.seoTitle ?? episode.title}
+  description={episode.seoDescription ?? episode.summary}
+  canonicalPath={`/episodes/${episode.slug}/`}
+  schema={schema}
+>
   <article class="episode-page">
     <header class="episode-page-hero panel">
       <div class="episode-meta">

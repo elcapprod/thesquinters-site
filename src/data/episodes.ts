@@ -40,6 +40,8 @@ export type Episode = {
   title: string;
   slug: string;
   summary: string;
+  seoTitle?: string;
+  seoDescription?: string;
   body: string[];
   spotifyUrl: string;
   appleUrl: string;
@@ -65,6 +67,8 @@ export const episodes: Episode[] = [
   "title": "NO. 140 - 2026 EMERGENCY POD: Toby Greene leaves GWS for Geelong",
   "slug": "no-140-2026-emergency-pod-toby-greene-geelong",
   "summary": "Toby Greene is leaving GWS for Geelong. Sparrow, Ragnar and special guest Yash jump on for an emergency pod to process the news, reflect on Toby's legacy and look at what comes next for the Giants.",
+  "seoTitle": "Toby Greene Leaves GWS for Geelong – Emergency Podcast",
+  "seoDescription": "GWS Giants fans react to Toby Greene leaving GWS for Geelong. The Squinters emergency podcast reflects on his legacy and what comes next.",
   "episodeType": "emergency-pod",
   "hosts": [
     "ragnar-lothbrok",
